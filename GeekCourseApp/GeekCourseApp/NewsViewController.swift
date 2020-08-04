@@ -26,7 +26,7 @@ class NewsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableView()
-        tableView.backgroundColor = .green
+        tableView.backgroundColor = .white
     }
     
     func configTableView() {

@@ -13,30 +13,37 @@ class NewsCell: UITableViewCell {
     
     
     let userPhoto: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "person.fill")
-        imageView.layer.cornerRadius = imageView.frame.height / 2
-        imageView.clipsToBounds = true
-        imageView.layer.masksToBounds = true
-        imageView.layer.borderWidth = 1
-        imageView.layer.borderColor = UIColor.black.cgColor
-        
-        
-        return imageView
+        let iv = UIImageView()
+        return iv
+    }()
+    
+    let userNameLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
+    
+    let newsImage: UIImageView = {
+       let iv = UIImageView()
+        return iv
     }()
     
     var data: User? {
         didSet {
-            guard let data = data else { return }
-            userPhoto.image = UIImage(named: data.image)
+            setupUserImage()
         }
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        selectionStyle = .none
+        sizeToFit()
         addSubview(userPhoto)
-        userPhoto.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 8, paddingLeft: 16, paddingBottom: 0, paddingRight: 0, width: 80, height: 80)
+        addSubview(userNameLabel)
+        addSubview(newsImage)
+        setupLayout()
         
+        
+        setupUserImage()
         
     }
     
@@ -44,8 +51,29 @@ class NewsCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setupUserImage() {
+        guard let data = data else { return }
+        userPhoto.image = UIImage(named: data.image)
+        userNameLabel.text = data.firstName
+        newsImage.image = UIImage(named: data.image)
+    }
     
-    
+    func setupLayout() {
+        userPhoto.anchor(top: topAnchor,
+                         left: leftAnchor,
+                         bottom: bottomAnchor,
+                         right: nil,
+                         paddingTop: 8, paddingLeft: 16, paddingBottom: 8, paddingRight: 0,
+                         width: 80, height: 80)
+        userPhoto.layer.cornerRadius = 80 / 2
+        userPhoto.clipsToBounds = true
+        
+        userNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        userNameLabel.centerYAnchor.constraint(equalTo: userPhoto.centerYAnchor).isActive = true
+        userNameLabel.leadingAnchor.constraint(equalTo: userPhoto.trailingAnchor, constant: 16).isActive = true
+        
+        newsImage.anchor(top: userPhoto.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 8, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+    }
     
     
     

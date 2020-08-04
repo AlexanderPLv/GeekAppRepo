@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		9A67CD5A24D8100900B1ACBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A67CD5924D8100900B1ACBC /* AppDelegate.swift */; };
 		9A67CD5C24D8100900B1ACBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A67CD5B24D8100900B1ACBC /* SceneDelegate.swift */; };
-		9A67CD5E24D8100900B1ACBC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A67CD5D24D8100900B1ACBC /* ViewController.swift */; };
+		9A67CD5E24D8100900B1ACBC /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A67CD5D24D8100900B1ACBC /* SignInViewController.swift */; };
 		9A67CD6124D8100900B1ACBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A67CD5F24D8100900B1ACBC /* Main.storyboard */; };
 		9A67CD6324D8101000B1ACBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A67CD6224D8101000B1ACBC /* Assets.xcassets */; };
 		9A67CD6624D8101000B1ACBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A67CD6424D8101000B1ACBC /* LaunchScreen.storyboard */; };
+		9A69B3C124D96F46004516C2 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A69B3C024D96F46004516C2 /* FriendsViewController.swift */; };
 		9A98622024D81C3C00459F78 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A98621F24D81C3C00459F78 /* Extensions.swift */; };
 		9A98622224D82C4C00459F78 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A98622124D82C4C00459F78 /* MainTabBarController.swift */; };
 		9A98622424D8302E00459F78 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A98622324D8302E00459F78 /* NewsViewController.swift */; };
@@ -26,11 +27,12 @@
 		9A67CD5624D8100900B1ACBC /* GeekCourseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeekCourseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A67CD5924D8100900B1ACBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A67CD5B24D8100900B1ACBC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9A67CD5D24D8100900B1ACBC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9A67CD5D24D8100900B1ACBC /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		9A67CD6024D8100900B1ACBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9A67CD6224D8101000B1ACBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A67CD6524D8101000B1ACBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A67CD6724D8101000B1ACBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A69B3C024D96F46004516C2 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		9A98621F24D81C3C00459F78 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9A98622124D82C4C00459F78 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		9A98622324D8302E00459F78 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
@@ -75,13 +77,14 @@
 				9A98622524D834BA00459F78 /* View */,
 				9A98621E24D81C2800459F78 /* Utils */,
 				9A67CD6D24D8102B00B1ACBC /* Application Delegate */,
-				9A67CD5D24D8100900B1ACBC /* ViewController.swift */,
+				9A67CD5D24D8100900B1ACBC /* SignInViewController.swift */,
 				9A67CD5F24D8100900B1ACBC /* Main.storyboard */,
 				9A67CD6F24D810A800B1ACBC /* Resourses */,
 				9A67CD6424D8101000B1ACBC /* LaunchScreen.storyboard */,
 				9A67CD6E24D8108F00B1ACBC /* Supporting Files */,
 				9A98622124D82C4C00459F78 /* MainTabBarController.swift */,
 				9A98622324D8302E00459F78 /* NewsViewController.swift */,
+				9A69B3C024D96F46004516C2 /* FriendsViewController.swift */,
 			);
 			path = GeekCourseApp;
 			sourceTree = "<group>";
@@ -218,9 +221,10 @@
 				9A98622C24D84BE400459F78 /* Group.swift in Sources */,
 				9A98622F24D8530C00459F78 /* ReusableView.swift in Sources */,
 				9A98622424D8302E00459F78 /* NewsViewController.swift in Sources */,
-				9A67CD5E24D8100900B1ACBC /* ViewController.swift in Sources */,
+				9A67CD5E24D8100900B1ACBC /* SignInViewController.swift in Sources */,
 				9A67CD5A24D8100900B1ACBC /* AppDelegate.swift in Sources */,
 				9A98622724D834D900459F78 /* NewsCell.swift in Sources */,
+				9A69B3C124D96F46004516C2 /* FriendsViewController.swift in Sources */,
 				9A98622A24D84BC500459F78 /* User.swift in Sources */,
 				9A98622224D82C4C00459F78 /* MainTabBarController.swift in Sources */,
 				9A67CD5C24D8100900B1ACBC /* SceneDelegate.swift in Sources */,
