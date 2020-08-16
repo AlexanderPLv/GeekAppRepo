@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Sign In" , for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = UIColor.rgb(red: 74, green: 118, blue: 168)
+        button.backgroundColor = .vkBlue
         button.layer.cornerRadius = 5
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         

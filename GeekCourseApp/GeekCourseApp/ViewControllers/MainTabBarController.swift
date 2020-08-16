@@ -20,9 +20,9 @@ class MainTabBarController: UITabBarController{
         
         guard let selectedNewsImage = UIImage(systemName: "square.grid.2x2.fill"),
             let newsImage = UIImage(systemName: "square.grid.2x2") else { return }
-        let newsViewController = templateNavController(unselectedImage: newsImage, selectedImage: selectedNewsImage, rootViewController: NewsViewController())
+        let newsViewController = templateNavController(unselectedImage: newsImage, selectedImage: selectedNewsImage, rootViewController: NewsViewController(collectionViewLayout: UICollectionViewFlowLayout()))
         
-        let searchViewController = templateNavController(unselectedImage: #imageLiteral(resourceName: "search_unselected"), selectedImage: #imageLiteral(resourceName: "search_selected"))
+        let searchViewController = templateNavController(unselectedImage: #imageLiteral(resourceName: "search_unselected"), selectedImage: #imageLiteral(resourceName: "search_selected"), rootViewController: SearchViewController(collectionViewLayout: UICollectionViewFlowLayout()))
         
         guard let selectedFriendsImage = UIImage(systemName: "person.2.fill"),
         let unselectedFriendsImage = UIImage(systemName: "person.2") else { return }
@@ -30,7 +30,7 @@ class MainTabBarController: UITabBarController{
         
         guard let selectedGroupsImage = UIImage(systemName: "person.3.fill"),
         let unselectedGroupsImage = UIImage(systemName: "person.3") else { return }
-        let groupsViewController = templateNavController(unselectedImage: unselectedGroupsImage, selectedImage: selectedGroupsImage)
+        let groupsViewController = templateNavController(unselectedImage: unselectedGroupsImage, selectedImage: selectedGroupsImage, rootViewController: GroupsViewController())
         
      
         viewControllers = [
