@@ -12,6 +12,16 @@ class MainTabBarController: UITabBarController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        if Session.shared.token == nil {
+            DispatchQueue.main.async {
+                let login = VKLoginController()
+                let navController = UINavigationController(rootViewController: login)
+                self.present(navController, animated: true, completion: nil)
+            }
+            return
+        }
+        
         setupViewControllers()
     }
     

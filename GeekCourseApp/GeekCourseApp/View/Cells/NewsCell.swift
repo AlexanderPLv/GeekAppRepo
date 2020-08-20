@@ -51,6 +51,11 @@ class NewsCell: UICollectionViewCell, ReusableView {
     }()
     
     
+    
+    let bottomBarStack = UIStackView()
+    
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white

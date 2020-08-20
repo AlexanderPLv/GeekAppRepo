@@ -17,11 +17,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
+        
+     //  window?.rootViewController = VKLoginController()
         window?.rootViewController = MainTabBarController()
         window?.makeKeyAndVisible()
         
         UINavigationBar.appearance().barTintColor = .vkBlue
     }
+    
+    func changeRootViewController(_ rootVC: UIViewController, animated: Bool = true ) {
+           guard let window = self.window else { return }
+           window.rootViewController = rootVC
+       }
 
 
 }
