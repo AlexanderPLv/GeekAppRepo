@@ -1,23 +1,38 @@
 //
-//  TablesCell.swift
+//  GroupsCell.swift
 //  GeekCourseApp
 //
-//  Created by MacMini on 05.08.2020.
+//  Created by MacMini on 07.09.2020.
 //  Copyright © 2020 com.blablabla. All rights reserved.
 //
 
+import Foundation
+
 import UIKit
 
-class TablesCell: UITableViewCell, ReusableView {
+class GroupsTableCell: UITableViewCell, ReusableView {
     
-    let cellsImage: UIImageView = {
-        let iv = UIImageView()
+    func set(_ group: Group?) {
+        titleLabel.text = group?.name
+        
+        guard let imageUrl = group?.imageURL else { return }
+        cellsImage.loadImage(urlString: imageUrl)
+    }
+    
+    let cellsImage: CustomImageView = {
+        let iv = CustomImageView(image: #imageLiteral(resourceName: "select_photo_empty"))
+        iv.layer.cornerRadius = 40
+        iv.clipsToBounds = true
+        iv.layer.masksToBounds = true
         return iv
     }()
        
     
     let titleLabel: UILabel = {
         let label = UILabel()
+        label.adjustsFontSizeToFitWidth = true
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 18)
         label.contentMode = .left
         return label
     }()
@@ -28,8 +43,7 @@ class TablesCell: UITableViewCell, ReusableView {
         
         addSubview(cellsImage)
         addSubview(titleLabel)
-        configureImage()
-        configureTitleLabel()
+
         setImagesConstraints()
         setTitleLabelConstraints()
     }
@@ -38,27 +52,11 @@ class TablesCell: UITableViewCell, ReusableView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func set(_ data: User) {
-        cellsImage.image = UIImage(named: data.image)
-        titleLabel.text = data.firstName
-    }
-    
-    fileprivate func configureTitleLabel() {
-        titleLabel.adjustsFontSizeToFitWidth = true
-        titleLabel.numberOfLines = 0
-        titleLabel.font = UIFont.systemFont(ofSize: 18)
-    }
-
-    fileprivate func configureImage() {
-        cellsImage.layer.cornerRadius = 40
-        cellsImage.clipsToBounds = true
-        cellsImage.layer.masksToBounds = true
-    }
-    
     fileprivate func setTitleLabelConstraints() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.centerYAnchor.constraint(equalTo: cellsImage.centerYAnchor).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: cellsImage.trailingAnchor, constant: 20).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: cellsImage.trailingAnchor, constant: 16).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 16).isActive = true
     }
     
    fileprivate func setImagesConstraints() {

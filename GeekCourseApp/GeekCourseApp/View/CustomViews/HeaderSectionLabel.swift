@@ -10,8 +10,8 @@ import UIKit
 
 class HeaderSectionView: UIView {
     
-    let headerTitle: UILabel = {
-        let label = UILabel()
+    let headerTitle: IndentedLabel = {
+        let label = IndentedLabel()
         label.backgroundColor = UIColor(white: 0.9, alpha: 0.5)
         label.textColor = .lightGray
         label.contentMode = .left

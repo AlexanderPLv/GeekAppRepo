@@ -18,7 +18,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         
-     //  window?.rootViewController = VKLoginController()
         window?.rootViewController = MainTabBarController()
         window?.makeKeyAndVisible()
         
@@ -29,7 +28,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
            guard let window = self.window else { return }
            window.rootViewController = rootVC
        }
-
-
+    
 }
 

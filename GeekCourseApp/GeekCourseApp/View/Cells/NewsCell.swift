@@ -50,12 +50,28 @@ class NewsCell: UICollectionViewCell, ReusableView {
         return iv
     }()
     
+    let likeControl: UILabel = {
+           let customControl = UILabel()
+           customControl.text = "11"
+           customControl.contentMode = .center
+           return customControl
+       }()
+       
+       let shareControl: UILabel = {
+           let customControl = UILabel()
+           customControl.text = "12"
+           customControl.contentMode = .center
+           return customControl
+       }()
+       
+       let commentControl: UILabel = {
+          let customControl = UILabel()
+           customControl.text = "13"
+           customControl.contentMode = .center
+           return customControl
+       }()
     
-    
-    let bottomBarStack = UIStackView()
-    
-    
-    
+  
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
@@ -68,10 +84,21 @@ class NewsCell: UICollectionViewCell, ReusableView {
         setProfileNameConstraints()
         setStatusTextConstraints()
         setNewsImageConstraints()
+        setupBottomBarStack()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    fileprivate func setupBottomBarStack() {
+        let stackView = UIStackView(arrangedSubviews: [likeControl, commentControl, shareControl])
+        stackView.distribution = .equalSpacing
+        stackView.axis = .horizontal
+        stackView.spacing = 0
+        addSubview(stackView)
+        
+        stackView.anchor(top: newsImage.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 100)
     }
     
     fileprivate func setProfileImageConstraints() {

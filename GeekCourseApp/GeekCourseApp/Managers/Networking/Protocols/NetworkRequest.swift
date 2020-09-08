@@ -15,13 +15,18 @@ protocol NetworkRequest: AnyObject {
     }
 
 extension NetworkRequest {
-    fileprivate func load(_ url: URL, withCompletion completion: @escaping (ModelType?) -> Void) {
+     func load(_ url: URL, withCompletion completion: @escaping (ModelType?) -> Void) {
+        print("call load func")
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: .main)
         let task = session.dataTask(with: url, completionHandler: { [weak self] (data: Data?, response: URLResponse?, error: Error?) -> Void in
+            
+           
             guard let data = data else {
                 completion(nil)
                 return
             }
+//            let json = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments)
+//            print(json)
             completion(self?.decode(data))
         })
         task.resume()
