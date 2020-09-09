@@ -18,10 +18,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         
+        
         window?.rootViewController = MainTabBarController()
         window?.makeKeyAndVisible()
         
+        UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().barTintColor = .vkBlue
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().isTranslucent = false
     }
     
     func changeRootViewController(_ rootVC: UIViewController, animated: Bool = true ) {

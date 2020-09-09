@@ -1,14 +1,14 @@
 //
-//  NewsCell.swift
+//  NewsFeedCell.swift
 //  GeekCourseApp
 //
-//  Created by MacMini on 03.08.2020.
+//  Created by MacMini on 09.09.2020.
 //  Copyright © 2020 com.blablabla. All rights reserved.
 //
 
 import UIKit
 
-class NewsCell: UICollectionViewCell, ReusableView {
+class NewsFeedCell: UITableViewCell, ReusableView {
     
     let profileImage: UIImageView = {
        let iv = UIImageView()
@@ -71,9 +71,9 @@ class NewsCell: UICollectionViewCell, ReusableView {
            return customControl
        }()
     
-  
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         backgroundColor = .white
         addSubview(profileImage)
         addSubview(profileTitle)
@@ -110,7 +110,7 @@ class NewsCell: UICollectionViewCell, ReusableView {
     }
     
     fileprivate func setNewsImageConstraints() {
-        newsImage.anchor(top: statusText.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 8, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        newsImage.anchor(top: statusText.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 8, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
     }
     
     fileprivate func setStatusTextConstraints() {

@@ -15,6 +15,7 @@ class GroupsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Communities"
         tableView.register(GroupsTableCell.self, forCellReuseIdentifier: GroupsTableCell.reuseIdentifier)
         getGroups()
     }
@@ -22,7 +23,6 @@ class GroupsViewController: UITableViewController {
     lazy var fetchedResultsController: NSFetchedResultsController<Group> = {
         
         let context = CoreDataManager.shared.persistentContainer.viewContext
-        
         let request: NSFetchRequest<Group> = Group.fetchRequest()
         request.sortDescriptors = [
             NSSortDescriptor(key: "name", ascending: true)

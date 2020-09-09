@@ -1,21 +1,21 @@
 //
-//  GroupsCell.swift
+//  TablesCell.swift
 //  GeekCourseApp
 //
-//  Created by MacMini on 07.09.2020.
+//  Created by MacMini on 05.08.2020.
 //  Copyright © 2020 com.blablabla. All rights reserved.
 //
 
-import Foundation
-
 import UIKit
 
-class GroupsTableCell: UITableViewCell, ReusableView {
+class UserTableCell: UITableViewCell, ReusableView {
     
-    func set(_ group: Group?) {
-        titleLabel.text = group?.name
+    func set(_ user: User?) {
+        if let firstName = user?.firstName, let lastName = user?.lastName {
+            titleLabel.text = "\(firstName)" + " \(lastName)"
+        }
         
-        guard let imageUrl = group?.imageURL else { return }
+        guard let imageUrl = user?.imageURL else { return }
         cellsImage.loadImage(urlString: imageUrl)
     }
     
@@ -55,14 +55,14 @@ class GroupsTableCell: UITableViewCell, ReusableView {
     fileprivate func setTitleLabelConstraints() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.centerYAnchor.constraint(equalTo: cellsImage.centerYAnchor).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: cellsImage.trailingAnchor, constant: 16).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 16).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: cellsImage.trailingAnchor, constant: 8).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8).isActive = true
     }
     
    fileprivate func setImagesConstraints() {
     cellsImage.translatesAutoresizingMaskIntoConstraints = false
     cellsImage.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-    cellsImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive = true
+    cellsImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8).isActive = true
     cellsImage.widthAnchor.constraint(equalToConstant: 80).isActive = true
     cellsImage.heightAnchor.constraint(equalToConstant: 80).isActive = true
     

@@ -12,25 +12,24 @@ class MainTabBarController: UITabBarController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        view.backgroundColor = .white
         if Session.shared.token == nil {
             DispatchQueue.main.async {
                 let login = VKLoginController()
-                let navController = UINavigationController(rootViewController: login)
-                self.present(navController, animated: true, completion: nil)
+                login.modalPresentationStyle = .fullScreen
+                self.present(login, animated: true, completion: nil)
             }
             return
         }
-        
+
         setupViewControllers()
     }
     
     func setupViewControllers() {
         
-        
         guard let selectedNewsImage = UIImage(systemName: "square.grid.2x2.fill"),
             let newsImage = UIImage(systemName: "square.grid.2x2") else { return }
-        let newsViewController = templateNavController(unselectedImage: newsImage, selectedImage: selectedNewsImage, rootViewController: NewsViewController(collectionViewLayout: UICollectionViewFlowLayout()))
+        let newsViewController = templateNavController(unselectedImage: newsImage, selectedImage: selectedNewsImage, rootViewController: NewsVC())
         
         let searchViewController = templateNavController(unselectedImage: #imageLiteral(resourceName: "search_unselected"), selectedImage: #imageLiteral(resourceName: "search_selected"), rootViewController: SearchViewController(collectionViewLayout: UICollectionViewFlowLayout()))
         
@@ -57,9 +56,9 @@ class MainTabBarController: UITabBarController{
         }
     }
     
-    fileprivate func templateNavController(unselectedImage: UIImage, selectedImage: UIImage, rootViewController: UIViewController = UIViewController()) -> UINavigationController {
+    fileprivate func templateNavController(unselectedImage: UIImage, selectedImage: UIImage, rootViewController: UIViewController = UIViewController()) -> CustomNavigationController {
         let viewController = rootViewController
-        let navController = UINavigationController(rootViewController: viewController)
+        let navController = CustomNavigationController(rootViewController: viewController)
         navController.tabBarItem.image = unselectedImage
         navController.tabBarItem.selectedImage = selectedImage
         return navController

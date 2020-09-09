@@ -22,6 +22,7 @@ class SearchViewController: UICollectionViewController, UICollectionViewDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Search"
         configureCollectionView()
         setupSearchBar()
         

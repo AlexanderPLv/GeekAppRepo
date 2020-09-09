@@ -11,11 +11,11 @@ import UIKit
 class SearchCell: UICollectionViewCell, ReusableView {
     
     let profileImageView: UIImageView = {
-       let iv = UIImageView()
+       let iv = UIImageView(image: #imageLiteral(resourceName: "select_photo_empty"))
         iv.contentMode = .scaleAspectFill
         iv.layer.cornerRadius = 40
         iv.clipsToBounds = true
-        iv.backgroundColor = .vkBlue
+        iv.backgroundColor = .white
         return iv
     }()
     
@@ -28,7 +28,7 @@ class SearchCell: UICollectionViewCell, ReusableView {
     
     let separatorView: UIView = {
        let sv = UIView()
-        sv.backgroundColor = UIColor(white: 0, alpha: 0.5)
+        sv.backgroundColor = UIColor(white: 0, alpha: 0.3)
         return sv
     }()
     
@@ -47,15 +47,30 @@ class SearchCell: UICollectionViewCell, ReusableView {
     }
     
     fileprivate func setProfileImageConstaints() {
-        profileImageView.anchor(top: nil, left: leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 12, paddingBottom: 0, paddingRight: 0, width: 80, height: 80)
+        profileImageView.anchor(top: nil,
+                                left: leftAnchor,
+                                bottom: nil,
+                                right: nil,
+                                paddingTop: 0, paddingLeft: 12, paddingBottom: 0, paddingRight: 0,
+                                width: 80, height: 80)
         profileImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     }
     
     fileprivate func setProfileTitleConstraints() {
-        profileTitle.anchor(top: topAnchor, left: profileImageView.rightAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 8, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        profileTitle.anchor(top: topAnchor,
+                            left: profileImageView.rightAnchor,
+                            bottom: bottomAnchor,
+                            right: rightAnchor,
+                            paddingTop: 0, paddingLeft: 8, paddingBottom: 0, paddingRight: 0,
+                            width: 0, height: 0)
     }
     
     fileprivate func setSeparatorConstraints() {
-        separatorView.anchor(top: nil, left: profileTitle.leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0.5)
+        separatorView.anchor(top: nil,
+                             left: profileImageView.leftAnchor,
+                             bottom: bottomAnchor,
+                             right: rightAnchor,
+                             paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0,
+                             width: 0, height: 0.5)
     }
 }
