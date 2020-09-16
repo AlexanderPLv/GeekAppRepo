@@ -11,7 +11,7 @@ import UIKit
 class NewsFeedCell: UITableViewCell, ReusableView {
     
     let profileImage: UIImageView = {
-       let iv = UIImageView()
+        let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
         iv.backgroundColor = .white
         iv.layer.cornerRadius = 20
@@ -33,7 +33,7 @@ class NewsFeedCell: UITableViewCell, ReusableView {
     }()
     
     let statusText: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
@@ -41,8 +41,8 @@ class NewsFeedCell: UITableViewCell, ReusableView {
         return label
     }()
     
-    let newsImage: UIImageView = {
-        let iv = UIImageView()
+    let newsImage: CustomImageView = {
+        let iv = CustomImageView()
         iv.contentMode = .scaleAspectFill
         iv.backgroundColor = .white
         iv.clipsToBounds = true
@@ -50,26 +50,28 @@ class NewsFeedCell: UITableViewCell, ReusableView {
         return iv
     }()
     
-    let likeControl: UILabel = {
-           let customControl = UILabel()
-           customControl.text = "11"
-           customControl.contentMode = .center
-           return customControl
-       }()
-       
-       let shareControl: UILabel = {
-           let customControl = UILabel()
-           customControl.text = "12"
-           customControl.contentMode = .center
-           return customControl
-       }()
-       
-       let commentControl: UILabel = {
-          let customControl = UILabel()
-           customControl.text = "13"
-           customControl.contentMode = .center
-           return customControl
-       }()
+    let likeControl: CustomControl = {
+        let customControl = CustomControl()
+        customControl.text = "12"
+        customControl.image = UIImage(named: "like_unselected")
+        return customControl
+    }()
+    
+    let shareControl: CustomControl = {
+        let customControl = CustomControl()
+        customControl.image = UIImage(systemName: "arrowshape.turn.up.right")
+        customControl.text = "25"
+        customControl.contentMode = .center
+        return customControl
+    }()
+    
+    let commentControl: CustomControl = {
+        let customControl = CustomControl()
+        customControl.image = UIImage(systemName: "message")
+        customControl.text = "43"
+        customControl.contentMode = .center
+        return customControl
+    }()
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -91,30 +93,71 @@ class NewsFeedCell: UITableViewCell, ReusableView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private func set(news: News) {
+        likeControl.text = String(news.likes?.count ?? 0)
+        commentControl.text = String(news.comments?.count ?? 0)
+        shareControl.text = String(news.reposts?.count ?? 0)
+        statusText.text = news.text
+    }
+    
+    
+    
+    
+    
     fileprivate func setupBottomBarStack() {
-        let stackView = UIStackView(arrangedSubviews: [likeControl, commentControl, shareControl])
+        let stackView = UIStackView(arrangedSubviews: [
+            likeControl,
+            commentControl,
+            shareControl
+        ])
         stackView.distribution = .equalSpacing
         stackView.axis = .horizontal
-        stackView.spacing = 0
+        stackView.alignment = .leading
+        stackView.spacing = 10
         addSubview(stackView)
         
-        stackView.anchor(top: newsImage.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 100)
+        stackView.anchor(top: newsImage.bottomAnchor,
+                         left: leftAnchor,
+                         bottom: bottomAnchor,
+                         right: nil,
+                         paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0,
+                         width: ((frame.width/4)*3), height: 50)
     }
     
     fileprivate func setProfileImageConstraints() {
-        profileImage.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: nil, paddingTop: 12, paddingLeft: 8, paddingBottom: 0, paddingRight: 0, width: 40, height: 40)
+        profileImage.anchor(top: topAnchor,
+                            left: leftAnchor,
+                            bottom: nil,
+                            right: nil,
+                            paddingTop: 12, paddingLeft: 8, paddingBottom: 0, paddingRight: 0,
+                            width: 40, height: 40)
     }
     
     fileprivate func setProfileNameConstraints() {
-        profileTitle.anchor(top: topAnchor, left: profileImage.rightAnchor, bottom: profileImage.bottomAnchor, right: rightAnchor, paddingTop: 12, paddingLeft: 12, paddingBottom: 0, paddingRight: 8, width: 0, height: 0)
+        profileTitle.anchor(top: topAnchor,
+                            left: profileImage.rightAnchor,
+                            bottom: profileImage.bottomAnchor,
+                            right: rightAnchor,
+                            paddingTop: 12, paddingLeft: 12, paddingBottom: 0, paddingRight: 8,
+                            width: 0, height: 0)
     }
     
     fileprivate func setNewsImageConstraints() {
-        newsImage.anchor(top: statusText.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 8, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        newsImage.anchor(top: statusText.bottomAnchor,
+                         left: leftAnchor,
+                         bottom: nil,
+                         right: rightAnchor,
+                         paddingTop: 8, paddingLeft: 0, paddingBottom: 0, paddingRight: 0,
+                         width: 0, height: 0)
     }
     
     fileprivate func setStatusTextConstraints() {
-        statusText.anchor(top: profileImage.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 8, paddingLeft: 8, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        statusText.anchor(top: profileImage.bottomAnchor,
+                          left: leftAnchor,
+                          bottom: nil,
+                          right: rightAnchor,
+                          paddingTop: 8, paddingLeft: 8, paddingBottom: 0, paddingRight: 0,
+                          width: 0, height: 0)
     }
     
 }

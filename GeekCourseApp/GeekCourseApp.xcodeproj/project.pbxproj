@@ -27,8 +27,14 @@
 		9A62469825075F0D0044C224 /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A62469725075F0D0044C224 /* Wrapper.swift */; };
 		9A62469D2507C1D80044C224 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A62469C2507C1D80044C224 /* CustomNavigationController.swift */; };
 		9A62469F2507CA560044C224 /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A62469E2507CA560044C224 /* NewsVC.swift */; };
+		9A63CBC5251202B700A63911 /* NewsResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A63CBC4251202B700A63911 /* NewsResource.swift */; };
+		9A63CBC72512033600A63911 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A63CBC62512033600A63911 /* News.swift */; };
+		9A63CBCA2512054800A63911 /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A63CBC92512054800A63911 /* Comments.swift */; };
+		9A63CBCC251205D600A63911 /* Likes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A63CBCB251205D600A63911 /* Likes.swift */; };
+		9A63CBCE2512068700A63911 /* Reposts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A63CBCD2512068700A63911 /* Reposts.swift */; };
 		9A649F9D24DAA5F50084CD5C /* UserTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A649F9C24DAA5F50084CD5C /* UserTableCell.swift */; };
 		9A649F9F24DAB8400084CD5C /* HeaderSectionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A649F9E24DAB8400084CD5C /* HeaderSectionLabel.swift */; };
+		9A6738C72510A6FE007EDA28 /* CustomUIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6738C62510A6FE007EDA28 /* CustomUIControl.swift */; };
 		9A67CD5A24D8100900B1ACBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A67CD5924D8100900B1ACBC /* AppDelegate.swift */; };
 		9A67CD5C24D8100900B1ACBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A67CD5B24D8100900B1ACBC /* SceneDelegate.swift */; };
 		9A67CD6324D8101000B1ACBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A67CD6224D8101000B1ACBC /* Assets.xcassets */; };
@@ -67,8 +73,14 @@
 		9A62469725075F0D0044C224 /* Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wrapper.swift; sourceTree = "<group>"; };
 		9A62469C2507C1D80044C224 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		9A62469E2507CA560044C224 /* NewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
+		9A63CBC4251202B700A63911 /* NewsResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsResource.swift; sourceTree = "<group>"; };
+		9A63CBC62512033600A63911 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		9A63CBC92512054800A63911 /* Comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
+		9A63CBCB251205D600A63911 /* Likes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Likes.swift; sourceTree = "<group>"; };
+		9A63CBCD2512068700A63911 /* Reposts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reposts.swift; sourceTree = "<group>"; };
 		9A649F9C24DAA5F50084CD5C /* UserTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableCell.swift; sourceTree = "<group>"; };
 		9A649F9E24DAB8400084CD5C /* HeaderSectionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSectionLabel.swift; sourceTree = "<group>"; };
+		9A6738C62510A6FE007EDA28 /* CustomUIControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIControl.swift; sourceTree = "<group>"; };
 		9A67CD5624D8100900B1ACBC /* GeekCourseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeekCourseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A67CD5924D8100900B1ACBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A67CD5B24D8100900B1ACBC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +127,7 @@
 			children = (
 				9A05770524FE48860067E5F4 /* UserResource.swift */,
 				9AB33CA8250663D6008B2467 /* GroupsResource.swift */,
+				9A63CBC4251202B700A63911 /* NewsResource.swift */,
 			);
 			path = EndPoints;
 			sourceTree = "<group>";
@@ -295,6 +308,17 @@
 			path = FriendsPhotoVC;
 			sourceTree = "<group>";
 		};
+		9A63CBC82512053C00A63911 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				9A63CBC62512033600A63911 /* News.swift */,
+				9A63CBC92512054800A63911 /* Comments.swift */,
+				9A63CBCB251205D600A63911 /* Likes.swift */,
+				9A63CBCD2512068700A63911 /* Reposts.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		9A67CD4D24D8100900B1ACBC = {
 			isa = PBXGroup;
 			children = (
@@ -387,6 +411,7 @@
 				9A649F9E24DAB8400084CD5C /* HeaderSectionLabel.swift */,
 				9AB33CA625066258008B2467 /* IndentedLabel.swift */,
 				9A05771624FE4B380067E5F4 /* CustomImageView.swift */,
+				9A6738C62510A6FE007EDA28 /* CustomUIControl.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -396,6 +421,7 @@
 			children = (
 				9A98622924D84BC500459F78 /* JsonUser.swift */,
 				9A98622B24D84BE400459F78 /* JsonGroups.swift */,
+				9A63CBC82512053C00A63911 /* New Group */,
 				9A62469725075F0D0044C224 /* Wrapper.swift */,
 			);
 			path = JSONModel;
@@ -475,8 +501,10 @@
 				9A6024F524DC1B0D0043E063 /* SearchViewController.swift in Sources */,
 				9A6024FD24DC3A6E0043E063 /* SearchCell.swift in Sources */,
 				9A6024F324DBFFC90043E063 /* GroupsViewController.swift in Sources */,
+				9A63CBCC251205D600A63911 /* Likes.swift in Sources */,
 				9AB33CB125066C8D008B2467 /* GroupsTableCell.swift in Sources */,
 				9A5FD7EF2502280D008A7B33 /* Model.xcdatamodeld in Sources */,
+				9A6738C72510A6FE007EDA28 /* CustomUIControl.swift in Sources */,
 				9A98622C24D84BE400459F78 /* JsonGroups.swift in Sources */,
 				9A05770E24FE48860067E5F4 /* ApiRequest.swift in Sources */,
 				9A98622F24D8530C00459F78 /* ReusableView.swift in Sources */,
@@ -487,6 +515,7 @@
 				9A67CD5A24D8100900B1ACBC /* AppDelegate.swift in Sources */,
 				9A6109222508BB1300544BAF /* NewsFeedVC+UITableView.swift in Sources */,
 				9A62469F2507CA560044C224 /* NewsVC.swift in Sources */,
+				9A63CBCA2512054800A63911 /* Comments.swift in Sources */,
 				9A05770F24FE48860067E5F4 /* ApiResource.swift in Sources */,
 				9A05771024FE48860067E5F4 /* NetworkRequest.swift in Sources */,
 				9A5FD7FE25025A9A008A7B33 /* FriendsVC+frc.swift in Sources */,
@@ -495,15 +524,18 @@
 				9A1FF27E24EAB7670048B2D3 /* VKLogin Controller.swift in Sources */,
 				9A98622A24D84BC500459F78 /* JsonUser.swift in Sources */,
 				9AB33CAF250669F9008B2467 /* GroupsVC+frc.swift in Sources */,
+				9A63CBC72512033600A63911 /* News.swift in Sources */,
 				9A62469D2507C1D80044C224 /* CustomNavigationController.swift in Sources */,
 				9A98622224D82C4C00459F78 /* MainTabBarController.swift in Sources */,
 				9AB33CA725066258008B2467 /* IndentedLabel.swift in Sources */,
 				9A62469825075F0D0044C224 /* Wrapper.swift in Sources */,
+				9A63CBCE2512068700A63911 /* Reposts.swift in Sources */,
 				9A67CD5C24D8100900B1ACBC /* SceneDelegate.swift in Sources */,
 				9A649F9D24DAA5F50084CD5C /* UserTableCell.swift in Sources */,
 				9A98622024D81C3C00459F78 /* Extensions.swift in Sources */,
 				9A5FD7FA25022E4E008A7B33 /* CoreDataManager.swift in Sources */,
 				9A05771724FE4B380067E5F4 /* CustomImageView.swift in Sources */,
+				9A63CBC5251202B700A63911 /* NewsResource.swift in Sources */,
 				9A5FD7FC25025607008A7B33 /* FriendsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -46,6 +46,7 @@ extension BaseURL {
 enum Path {
     case getFriends
     case getGroups
+    case getNews
 }
 
 extension Path {
@@ -55,6 +56,8 @@ extension Path {
             return "/method/friends.get"
         case .getGroups:
             return "/method/groups.get"
+        case .getNews:
+            return "/method/newsfeed.get"
         }
     }
 }

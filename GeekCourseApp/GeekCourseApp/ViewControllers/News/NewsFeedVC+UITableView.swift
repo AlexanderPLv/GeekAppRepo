@@ -17,7 +17,8 @@ extension NewsVC {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+//        return news?.count ?? 0
+        return 5
     }
     
 }

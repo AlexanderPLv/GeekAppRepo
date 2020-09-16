@@ -13,16 +13,27 @@ class NewsVC: UITableViewController {
     
     private var request: AnyObject?
     
-    
+    var news: [News]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "News"
         tableView.register(NewsFeedCell.self, forCellReuseIdentifier: NewsFeedCell.reuseIdentifier)
+       // getNews()
     }
     
-    
-    
+    fileprivate func getNews() {
+        let request = ApiRequest(resource: NewsResource())
+        self.request = request
+        
+        request.load { (response: NewsFeed?) in
+            guard let news = response?.items else { return }
+            self.news = news
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
 }
 
