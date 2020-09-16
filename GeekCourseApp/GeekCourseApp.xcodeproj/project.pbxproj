@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9A05770C24FE48860067E5F4 /* UserResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A05770524FE48860067E5F4 /* UserResource.swift */; };
-		9A05770D24FE48860067E5F4 /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A05770724FE48860067E5F4 /* ImageRequest.swift */; };
 		9A05770E24FE48860067E5F4 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A05770824FE48860067E5F4 /* ApiRequest.swift */; };
 		9A05770F24FE48860067E5F4 /* ApiResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A05770A24FE48860067E5F4 /* ApiResource.swift */; };
 		9A05771024FE48860067E5F4 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A05770B24FE48860067E5F4 /* NetworkRequest.swift */; };
@@ -49,7 +48,6 @@
 
 /* Begin PBXFileReference section */
 		9A05770524FE48860067E5F4 /* UserResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserResource.swift; sourceTree = "<group>"; };
-		9A05770724FE48860067E5F4 /* ImageRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
 		9A05770824FE48860067E5F4 /* ApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		9A05770A24FE48860067E5F4 /* ApiResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiResource.swift; sourceTree = "<group>"; };
 		9A05770B24FE48860067E5F4 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 		9A05770624FE48860067E5F4 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				9A05770724FE48860067E5F4 /* ImageRequest.swift */,
 				9A05770824FE48860067E5F4 /* ApiRequest.swift */,
 			);
 			path = Requests;
@@ -487,7 +484,6 @@
 				9A5FD80025025CD5008A7B33 /* FriendsVC+UITableView.swift in Sources */,
 				9AB33CA9250663D6008B2467 /* GroupsResource.swift in Sources */,
 				9AB99C0F24E95A1300C13759 /* Session.swift in Sources */,
-				9A05770D24FE48860067E5F4 /* ImageRequest.swift in Sources */,
 				9A67CD5A24D8100900B1ACBC /* AppDelegate.swift in Sources */,
 				9A6109222508BB1300544BAF /* NewsFeedVC+UITableView.swift in Sources */,
 				9A62469F2507CA560044C224 /* NewsVC.swift in Sources */,
