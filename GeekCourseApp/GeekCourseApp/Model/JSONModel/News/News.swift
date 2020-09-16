@@ -15,12 +15,5 @@ struct News: Decodable {
     let comments: Comments?
     let likes: Likes?
     let reposts: Reposts?
-    
-    
-    
-    
 }
 
-struct NewsFeed: Decodable {
-    let items: [News]
-}

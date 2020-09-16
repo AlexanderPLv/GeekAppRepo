@@ -13,13 +13,14 @@ class NewsVC: UITableViewController {
     
     private var request: AnyObject?
     
-    var news: [News]?
+    var news = [News]()
+    var groups = [JsonGroups]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "News"
         tableView.register(NewsFeedCell.self, forCellReuseIdentifier: NewsFeedCell.reuseIdentifier)
-       // getNews()
+       getNews()
     }
     
     fileprivate func getNews() {
@@ -34,6 +35,18 @@ class NewsVC: UITableViewController {
             }
         }
     }
+    
+    
+//    func attemptToAssembleGroupedArray() {
+//        let groupedElements = Dictionary(grouping: data) { (element) -> String in
+//            return String(element.firstName.prefix(1))
+//        }
+//        let sortedKeys = groupedElements.keys.sorted()
+//        sortedKeys.forEach { (key) in
+//            let values = groupedElements[key]
+//            groups.append(values ?? [])
+//        }
+//    }
     
 }
 

@@ -25,8 +25,8 @@ extension NetworkRequest {
                 completion(nil)
                 return
             }
-//            let json = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments)
-//            print(json)
+            let json = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments)
+            print(json)
             completion(self?.decode(data))
         })
         task.resume()

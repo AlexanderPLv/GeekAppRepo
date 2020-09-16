@@ -9,16 +9,16 @@
 import Foundation
 
 struct GroupItems: Decodable {
-    let items: [jsonGroups]
+    let items: [JsonGroups]
 }
 
-struct jsonGroups {
+struct JsonGroups {
     let id: Int
     let name: String
     let imageURL: String
 }
 
-extension jsonGroups: Decodable {
+extension JsonGroups: Decodable {
     enum CodingKeys: String, CodingKey {
         case id
         case name

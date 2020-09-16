@@ -93,7 +93,7 @@ class NewsFeedCell: UITableViewCell, ReusableView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func set(news: News) {
+    func set(_ news: News) {
         likeControl.text = String(news.likes?.count ?? 0)
         commentControl.text = String(news.comments?.count ?? 0)
         shareControl.text = String(news.reposts?.count ?? 0)

@@ -12,13 +12,13 @@ extension NewsVC {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsFeedCell.reuseIdentifier, for: indexPath) as? NewsFeedCell else { fatalError() }
-        
+        let news = self.news[indexPath.row]
+        cell.set(news)
         return cell
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return news?.count ?? 0
-        return 5
+        return news.count
     }
     
 }
