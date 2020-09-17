@@ -28,8 +28,11 @@ class NewsVC: UITableViewController {
         self.request = request
         
         request.load { (response: NewsFeed?) in
-            guard let news = response?.items else { return }
+            guard let news = response?.items,
+                   let groups = response?.groups
+                    else { return }
             self.news = news
+            self.groups = groups
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }

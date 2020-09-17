@@ -17,7 +17,6 @@ class ApiRequest<Resource: ApiResource> {
 }
  
 extension ApiRequest: NetworkRequest {
-
     func decode(_ data: Data) -> Resource.ModelType? {
         let wrapper = try? JSONDecoder().decode(Wrapper<ModelType>.self, from: data)
         return wrapper?.response

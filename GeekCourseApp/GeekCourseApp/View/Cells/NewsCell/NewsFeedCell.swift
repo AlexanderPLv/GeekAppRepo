@@ -26,7 +26,7 @@ class NewsFeedCell: UITableViewCell, ReusableView {
         label.numberOfLines = 2
         let attributedText = NSMutableAttributedString(string: "Profile Name", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)])
         
-        attributedText.append(NSAttributedString(string: "\n9 Aug at: 09:00", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12), NSAttributedString.Key.foregroundColor: UIColor.rgb(red: 155, green: 161, blue: 171)]))
+        attributedText.append(NSAttributedString(string: "\n9 Aug at: 09:00", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12), NSAttributedString.Key.foregroundColor: UIColor.lGray]))
         label.attributedText = attributedText
         
         return label
@@ -52,15 +52,16 @@ class NewsFeedCell: UITableViewCell, ReusableView {
     
     let likeControl: CustomControl = {
         let customControl = CustomControl()
-        customControl.text = "12"
         customControl.image = UIImage(named: "like_unselected")
+        customControl.tintColor = .lGray
+        customControl.contentMode = .center
         return customControl
     }()
     
     let shareControl: CustomControl = {
         let customControl = CustomControl()
         customControl.image = UIImage(systemName: "arrowshape.turn.up.right")
-        customControl.text = "25"
+        customControl.tintColor = .lGray
         customControl.contentMode = .center
         return customControl
     }()
@@ -68,7 +69,7 @@ class NewsFeedCell: UITableViewCell, ReusableView {
     let commentControl: CustomControl = {
         let customControl = CustomControl()
         customControl.image = UIImage(systemName: "message")
-        customControl.text = "43"
+        customControl.tintColor = .lGray
         customControl.contentMode = .center
         return customControl
     }()

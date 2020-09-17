@@ -16,6 +16,10 @@ extension UIColor {
     open class var vkBlue: UIColor {
         return UIColor(red: 74 / 255, green: 118 / 255, blue: 168 / 255, alpha: 1.0)
     }
+    
+    open class var lGray: UIColor {
+        return UIColor.rgb(red: 155, green: 161, blue: 171)
+    }
    
 }
 

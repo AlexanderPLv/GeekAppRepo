@@ -49,28 +49,30 @@ class FriendsViewController: UITableViewController {
         
         request.load { (response: UserItems?) in
             guard let users = response?.items else { return }
+            self.createUsers(users)
+        }
+    }
+    
+    fileprivate func createUsers(_ users: [JsonUser]) {
+        let privateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        privateContext.parent = CoreDataManager.shared.persistentContainer.viewContext
+        privateContext.parent?.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        users.forEach { (jsonUser) in
             
-            let privateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-            privateContext.parent = CoreDataManager.shared.persistentContainer.viewContext
-            privateContext.parent?.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
-            users.forEach { (jsonUser) in
-                print(jsonUser.firstName)
-                
-                let user = User(context: privateContext)
-                user.id = Int32(jsonUser.id)
-                user.firstName = jsonUser.firstName
-                user.lastName = jsonUser.lastName
-                user.imageURL = jsonUser.imageURL
-                user.sectionIndex = jsonUser.firstName.first?.uppercased()
-                do {
-                    try privateContext.save()
-                    try privateContext.parent?.save()
-                } catch let saveErr {
-                    print("Failed to save Users:", saveErr)
-                }
-                
+            let user = User(context: privateContext)
+            user.id = Int32(jsonUser.id)
+            user.firstName = jsonUser.firstName
+            user.lastName = jsonUser.lastName
+            user.imageURL = jsonUser.imageURL
+            user.sectionIndex = jsonUser.firstName.first?.uppercased()
+            do {
+                try privateContext.save()
+                try privateContext.parent?.save()
+            } catch let saveErr {
+                print("Failed to save Users:", saveErr)
             }
-            }
+            
+        }
     }
     
     
