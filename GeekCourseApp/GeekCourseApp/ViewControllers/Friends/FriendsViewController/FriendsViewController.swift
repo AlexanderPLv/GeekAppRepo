@@ -61,10 +61,10 @@ class FriendsViewController: UITableViewController {
             
             let user = User(context: privateContext)
             user.id = Int32(jsonUser.id)
-            user.firstName = jsonUser.firstName
+            user.firstName = jsonUser.name
             user.lastName = jsonUser.lastName
             user.imageURL = jsonUser.imageURL
-            user.sectionIndex = jsonUser.firstName.first?.uppercased()
+            user.sectionIndex = jsonUser.name.first?.uppercased()
             do {
                 try privateContext.save()
                 try privateContext.parent?.save()

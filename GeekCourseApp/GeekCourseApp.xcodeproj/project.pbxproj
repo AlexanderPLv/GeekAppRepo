@@ -40,6 +40,8 @@
 		9A67CD5C24D8100900B1ACBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A67CD5B24D8100900B1ACBC /* SceneDelegate.swift */; };
 		9A67CD6324D8101000B1ACBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A67CD6224D8101000B1ACBC /* Assets.xcassets */; };
 		9A67CD6624D8101000B1ACBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A67CD6424D8101000B1ACBC /* LaunchScreen.storyboard */; };
+		9A69B5F6251B61CD0054D9F0 /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A69B5F5251B61CD0054D9F0 /* NewsService.swift */; };
+		9A77EF182513B24000576EC2 /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A77EF172513B24000576EC2 /* ImageRequest.swift */; };
 		9A98622024D81C3C00459F78 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A98621F24D81C3C00459F78 /* Extensions.swift */; };
 		9A98622224D82C4C00459F78 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A98622124D82C4C00459F78 /* MainTabBarController.swift */; };
 		9A98622A24D84BC500459F78 /* JsonUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A98622924D84BC500459F78 /* JsonUser.swift */; };
@@ -89,6 +91,8 @@
 		9A67CD6224D8101000B1ACBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A67CD6524D8101000B1ACBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A67CD6724D8101000B1ACBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A69B5F5251B61CD0054D9F0 /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
+		9A77EF172513B24000576EC2 /* ImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
 		9A98621F24D81C3C00459F78 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9A98622124D82C4C00459F78 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		9A98622924D84BC500459F78 /* JsonUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonUser.swift; sourceTree = "<group>"; };
@@ -138,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				9A05770824FE48860067E5F4 /* ApiRequest.swift */,
+				9A77EF172513B24000576EC2 /* ImageRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 		9A5FD7F725022E1A008A7B33 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				9A69B5F4251B618E0054D9F0 /* NewsService */,
 				9A5FD7F825022E28008A7B33 /* CoreDataManager */,
 				9A05770324FE48860067E5F4 /* Networking */,
 			);
@@ -380,6 +386,14 @@
 			path = Resourses;
 			sourceTree = "<group>";
 		};
+		9A69B5F4251B618E0054D9F0 /* NewsService */ = {
+			isa = PBXGroup;
+			children = (
+				9A69B5F5251B61CD0054D9F0 /* NewsService.swift */,
+			);
+			path = NewsService;
+			sourceTree = "<group>";
+		};
 		9A98621E24D81C2800459F78 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,10 +529,12 @@
 				9A5FD80025025CD5008A7B33 /* FriendsVC+UITableView.swift in Sources */,
 				9AB33CA9250663D6008B2467 /* GroupsResource.swift in Sources */,
 				9AB99C0F24E95A1300C13759 /* Session.swift in Sources */,
+				9A69B5F6251B61CD0054D9F0 /* NewsService.swift in Sources */,
 				9A67CD5A24D8100900B1ACBC /* AppDelegate.swift in Sources */,
 				9A6109222508BB1300544BAF /* NewsFeedVC+UITableView.swift in Sources */,
 				9A62469F2507CA560044C224 /* NewsVC.swift in Sources */,
 				9A63CBCA2512054800A63911 /* Comments.swift in Sources */,
+				9A77EF182513B24000576EC2 /* ImageRequest.swift in Sources */,
 				9A05770F24FE48860067E5F4 /* ApiResource.swift in Sources */,
 				9A05771024FE48860067E5F4 /* NetworkRequest.swift in Sources */,
 				9A5FD7FE25025A9A008A7B33 /* FriendsVC+frc.swift in Sources */,

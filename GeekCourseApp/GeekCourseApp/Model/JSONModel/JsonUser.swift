@@ -14,7 +14,7 @@ struct UserItems: Decodable {
 
 struct JsonUser {
     var id       : Int
-    var firstName: String
+    var name: String
     var lastName : String?
     var imageURL : String?
 }
@@ -30,7 +30,7 @@ extension JsonUser: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(Int.self, forKey: .id)
-        firstName = try container.decode(String.self, forKey: .firstName)
+        name = try container.decode(String.self, forKey: .firstName)
         lastName = try container.decode(String.self, forKey: .lastName)
         imageURL = try container.decode(String.self, forKey: .imageURL)
     }

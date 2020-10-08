@@ -37,7 +37,6 @@ class NewsFeedCell: UITableViewCell, ReusableView {
         label.font = UIFont.systemFont(ofSize: 14)
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
-        label.text = "Some very very long long long long long long long long long long news description."
         return label
     }()
     
@@ -99,6 +98,7 @@ class NewsFeedCell: UITableViewCell, ReusableView {
         commentControl.text = String(news.comments?.count ?? 0)
         shareControl.text = String(news.reposts?.count ?? 0)
         statusText.text = news.text
+        profileTitle.text = news.profileName
     }
     
     

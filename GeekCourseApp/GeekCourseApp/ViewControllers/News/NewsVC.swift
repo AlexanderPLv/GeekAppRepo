@@ -13,43 +13,47 @@ class NewsVC: UITableViewController {
     
     private var request: AnyObject?
     
-    var news = [News]()
-    var groups = [JsonGroups]()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationItem.title = "News"
-        tableView.register(NewsFeedCell.self, forCellReuseIdentifier: NewsFeedCell.reuseIdentifier)
-       getNews()
-    }
-    
-    fileprivate func getNews() {
-        let request = ApiRequest(resource: NewsResource())
-        self.request = request
-        
-        request.load { (response: NewsFeed?) in
-            guard let news = response?.items,
-                   let groups = response?.groups
-                    else { return }
-            self.news = news
-            self.groups = groups
+    var newsFeed = [News]() {
+        didSet {
+            print("ccccCCCCCccccc")
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
     }
     
+    var newsService = NewsService()
     
-//    func attemptToAssembleGroupedArray() {
-//        let groupedElements = Dictionary(grouping: data) { (element) -> String in
-//            return String(element.firstName.prefix(1))
-//        }
-//        let sortedKeys = groupedElements.keys.sorted()
-//        sortedKeys.forEach { (key) in
-//            let values = groupedElements[key]
-//            groups.append(values ?? [])
-//        }
-//    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Reload", style: .plain, target: self, action: #selector(tapHandle))
+        navigationItem.title = "News"
+        tableView.register(NewsFeedCell.self, forCellReuseIdentifier: NewsFeedCell.reuseIdentifier)
+        
+        newsService.dataRequest { (newsFeed) in
+            self.newsFeed = newsFeed
+        }
+        
+////        let privateQueue = DispatchQueue(label: "com.private.queue")
+////        privateQueue.async {
+//
+////            self.newsService.dataRequest()
+////                        self.newsService.createPresentableNewsFeed()
+//                        self.newsFeed = self.newsService.getNewsFeed()
+//
+//
+////        }
+        
+       
+    }
     
+    @objc func tapHandle() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        
+    }
+    
+   
 }
 
