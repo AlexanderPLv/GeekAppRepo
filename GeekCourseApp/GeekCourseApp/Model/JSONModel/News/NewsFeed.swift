@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct NewsFeed: Decodable {
+struct NewsFeed: Codable {
     let items: [News]
     let groups: [JsonGroups]
+    let profiles: [JsonUser]
 }

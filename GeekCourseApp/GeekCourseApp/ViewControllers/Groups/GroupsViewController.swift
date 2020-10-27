@@ -56,11 +56,7 @@ class GroupsViewController: UITableViewController {
                 let group = Group(context: privateContext)
                 group.id = Int32(jsonGroup.id)
                 group.name = jsonGroup.name
-                //group.imageData = self.tryFetchImageData(stringURL: group.imageURL)
-                
-                
-                
-//                group.imageURL = jsonGroup.imageURL
+                group.imageURL = jsonGroup.profileImageUrl
                 do {
                     try privateContext.save()
                     try privateContext.parent?.save()

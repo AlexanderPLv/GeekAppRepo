@@ -17,8 +17,9 @@ public final class CustomControl: UIControl {
     
     fileprivate let label: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 18)
+        label.font = UIFont.systemFont(ofSize: 16)
         label.textAlignment = .center
+        label.textColor = .lGray
         label.adjustsFontSizeToFitWidth = true
         return label
     }()

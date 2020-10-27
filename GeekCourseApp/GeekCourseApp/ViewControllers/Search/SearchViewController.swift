@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class SearchViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class SearchViewController: BaseCollectionViewController {
     
     let searchBar: UISearchBar = {
        let sb = UISearchBar()
@@ -25,16 +25,12 @@ class SearchViewController: UICollectionViewController, UICollectionViewDelegate
         navigationItem.title = "Search"
         configureCollectionView()
         setupSearchBar()
-        
-        
     }
     
     private func setupSearchBar() {
         let navBar = navigationController?.navigationBar
         searchBar.anchor(top: navBar?.topAnchor, left: navBar?.leftAnchor, bottom: navBar?.bottomAnchor, right: navBar?.rightAnchor, paddingTop: 0, paddingLeft: 8, paddingBottom: 0, paddingRight: 8, width: 0, height: 0)
     }
-
-    
 
     // MARK: UICollectionViewDataSource
     
@@ -52,9 +48,6 @@ class SearchViewController: UICollectionViewController, UICollectionViewDelegate
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchCell.reuseIdentifier, for: indexPath) as? SearchCell else { fatalError() }
       
-
-    
-
         return cell
     }
 

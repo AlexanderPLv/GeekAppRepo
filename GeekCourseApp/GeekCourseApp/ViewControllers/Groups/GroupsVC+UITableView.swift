@@ -21,7 +21,6 @@ extension GroupsViewController {
         return 100
     }
 
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let sectionInfo = fetchedResultsController.sections?[section] else { fatalError("Unexpected Section") }
         return sectionInfo.numberOfObjects

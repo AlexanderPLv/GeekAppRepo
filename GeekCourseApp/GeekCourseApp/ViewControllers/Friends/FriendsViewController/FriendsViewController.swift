@@ -15,11 +15,15 @@ class FriendsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Friends"
+        setup()
         getUsers()
-        tableView.register(UserTableCell.self, forCellReuseIdentifier: UserTableCell.reuseIdentifier)
     }
 
+    private func setup() {
+        navigationItem.title = "Friends"
+        tableView.register(UserTableCell.self, forCellReuseIdentifier: UserTableCell.reuseIdentifier)
+        tableView.separatorColor = .clear
+    }
     
     lazy var fetchedResultsController: NSFetchedResultsController<User> = {
         
@@ -61,10 +65,10 @@ class FriendsViewController: UITableViewController {
             
             let user = User(context: privateContext)
             user.id = Int32(jsonUser.id)
-            user.firstName = jsonUser.name
+            user.firstName = jsonUser.firstName
             user.lastName = jsonUser.lastName
-            user.imageURL = jsonUser.imageURL
-            user.sectionIndex = jsonUser.name.first?.uppercased()
+            user.imageURL = jsonUser.profileImageUrl
+            user.sectionIndex = jsonUser.firstName.first?.uppercased()
             do {
                 try privateContext.save()
                 try privateContext.parent?.save()

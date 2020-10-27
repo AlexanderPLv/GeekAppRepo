@@ -11,10 +11,19 @@ import UIKit
 extension NewsVC {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsFeedCell.reuseIdentifier, for: indexPath) as? NewsFeedCell else { fatalError() }
+        
         let news = self.newsFeed[indexPath.row]
-        cell.set(news)
-        return cell
+        if news.newsImageUrl != nil {
+           guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsPhotoCell.reuseIdentifier, for: indexPath) as? NewsPhotoCell
+           else { fatalError() }
+            cell.set(news)
+            return cell
+        } else {
+           guard let cell = tableView.dequeueReusableCell(withIdentifier: PostCell.reuseIdentifier, for: indexPath) as? PostCell
+           else { fatalError() }
+            cell.set(news)
+            return cell
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

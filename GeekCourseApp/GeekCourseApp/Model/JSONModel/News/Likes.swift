@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Likes: Decodable {
+struct Likes: Codable {
     let count: Int?
     
 }

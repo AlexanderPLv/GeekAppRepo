@@ -39,7 +39,7 @@ class UserTableCell: UITableViewCell, ReusableView {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        selectionStyle = .none
+        selectionStyle = .default
         
         addSubview(cellsImage)
         addSubview(titleLabel)

@@ -15,8 +15,8 @@ class GroupsTableCell: UITableViewCell, ReusableView {
     func set(_ group: Group?) {
         titleLabel.text = group?.name
         
-        if let imageData = group?.imageData {
-            cellsImage.image = UIImage(data: imageData)
+        if let imageUrl = group?.imageURL {
+            cellsImage.loadImage(urlString: imageUrl)
         }
     }
     

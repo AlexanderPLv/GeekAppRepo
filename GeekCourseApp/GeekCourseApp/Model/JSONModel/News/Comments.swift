@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct Comments: Decodable {
+struct Comments: Codable {
     let count: Int?
 }

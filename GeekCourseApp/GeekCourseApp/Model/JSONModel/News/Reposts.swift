@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct Reposts: Decodable {
+struct Reposts: Codable {
     let count: Int?
 }

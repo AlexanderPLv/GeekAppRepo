@@ -11,49 +11,26 @@ import CoreData
 
 class NewsVC: UITableViewController {
     
-    private var request: AnyObject?
-    
+    private var newsService = NewsService()
     var newsFeed = [News]() {
         didSet {
-            print("ccccCCCCCccccc")
             DispatchQueue.main.async {
                 self.tableView.reloadData()
-            }
-        }
-    }
-    
-    var newsService = NewsService()
+            } } }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Reload", style: .plain, target: self, action: #selector(tapHandle))
-        navigationItem.title = "News"
-        tableView.register(NewsFeedCell.self, forCellReuseIdentifier: NewsFeedCell.reuseIdentifier)
-        
+        setupUI()
         newsService.dataRequest { (newsFeed) in
             self.newsFeed = newsFeed
         }
-        
-////        let privateQueue = DispatchQueue(label: "com.private.queue")
-////        privateQueue.async {
-//
-////            self.newsService.dataRequest()
-////                        self.newsService.createPresentableNewsFeed()
-//                        self.newsFeed = self.newsService.getNewsFeed()
-//
-//
-////        }
-        
-       
     }
     
-    @objc func tapHandle() {
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
-        
+    private func setupUI() {
+        navigationItem.title = "News"
+        tableView.register(NewsPhotoCell.self, forCellReuseIdentifier: NewsPhotoCell.reuseIdentifier)
+        tableView.register(PostCell.self, forCellReuseIdentifier: PostCell.reuseIdentifier)
     }
     
-   
 }
 
