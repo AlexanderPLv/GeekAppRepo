@@ -11,18 +11,26 @@ import CoreData
 
 class NewsVC: UITableViewController {
     
-    private var request: AnyObject?
-    
-    
+    private var newsService = NewsService()
+    var newsFeed = [News]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            } } }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "News"
-        tableView.register(NewsFeedCell.self, forCellReuseIdentifier: NewsFeedCell.reuseIdentifier)
+        setupUI()
+        newsService.dataRequest { (newsFeed) in
+            self.newsFeed = newsFeed
+        }
     }
     
-    
-    
+    private func setupUI() {
+        navigationItem.title = "News"
+        tableView.register(NewsPhotoCell.self, forCellReuseIdentifier: NewsPhotoCell.reuseIdentifier)
+        tableView.register(PostCell.self, forCellReuseIdentifier: PostCell.reuseIdentifier)
+    }
     
 }
 
